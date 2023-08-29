@@ -1,6 +1,7 @@
 from django.shortcuts import render , redirect
 from .models import Article # 추가 
 from .forms import ArticleForm 
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -12,7 +13,9 @@ def index(request):
     }
     return render(request,'index.html', context)
 
+@login_required
 def create(request): 
+
     if request.method == 'POST': 
         form = ArticleForm(request.POST)
         if form.is_valid(): 
