@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
+{% load bootstrap5 %}   <!--작성 -->
 
 {% block body %}
 
 
 <form action="" method = "POST">
     {% csrf_token %}
-    {{form}}
+    <!--{{form}}대신, 아래 부트캠프 씌워서 --> 
+    {% bootstrap_form form %}
     <input type="submit">
 </form>
 

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'accounts',
     'articles',
+
+    'bootstrap5'
 ]
 
 MIDDLEWARE = [
