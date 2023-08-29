@@ -3,11 +3,16 @@
 
 {% block body %}
 
+{% if request.resolver_match.url_name == 'signup' %}
+    <h1>회원가입</h1>   <!--signup일때 -->
+{% else %}
+    <h1>로그인</h1>
+{% endif %}
+
 <form action="" method="POST">
     {% csrf_token %}
     {% bootstrap_form form %}
     <input type="submit">
-
 </form>
 
 {% endblock %}
